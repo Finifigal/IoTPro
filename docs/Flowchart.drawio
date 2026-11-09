@@ -1,0 +1,236 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8">
+  <diagram name="Page-1" id="efSJI0ZjafCG633xziZU">
+    <mxGraphModel dx="1895" dy="1138" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-1" value="3. KIỂM SOÁT CỬA RA VÀO" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="162" y="2234" width="1096" height="633" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-2" value="2. AN NINH &amp; ĐỘT NHẬP" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="302" y="1899" width="930" height="262" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-3" value="1. AN TOÀN CHÁY NỔ &amp; KHÍ GAS" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="44" y="1156" width="981" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-5" value="BẮT ĐẦU" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="672" y="45" width="90" height="39" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-6" value="Khởi tạo hệ thống:&#xa;- Cấu hình chân GPIO, I2C, SPI&#xa;- Khởi động OLED, MPU-6050, RFID-RC522, DHT22&#xa;- Cố định góc đóng ban đầu cho Servo SG90" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="586" y="134" width="260" height="198" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-7" value="Đọc tín hiệu từ cảm biến &amp;amp; ngoại vi:&#xa;- MQ-2/135: Khí gas, khói&#xa;- DHT22: Nhiệt độ, độ ẩm&#xa;- PIR: Cảm biến chuyển động&#xa;- MPU-6050: Rung chấn, gia tốc&#xa;- LDR: Cường độ ánh sáng&#xa;- RFID: Quét thẻ từ" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="586" y="382" width="260" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-8" value="Kiểm tra kết nối&#xa;WiFi &amp;amp; Cloud IoT?" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="512" y="727" width="203" height="203" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-9" value="Báo lỗi mạng:&#xa;- Chuyển sang chạy Offline&#xa;- OLED: WiFi Disconnected" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1004" width="254" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-10" value="Mạng ổn định:&#xa;- Sẵn sàng đồng bộ Cloud" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="801" y="1016" width="242" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-11" value="Khí gas/Khói &amp;gt; Ngưỡng&#xa;HOẶC Nhiệt độ &amp;gt; 50°C?" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="490" y="1181" width="246" height="246" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-12" value="BÁO ĐỘNG HỎA HOẠN:&#xa;- Kích hoạt Còi hú lớn Siren&#xa;- Nhấp nháy liên tục LED Đỏ&#xa;- Quay Servo mở cửa thoát hiểm&#xa;- Gửi tin báo cháy khẩn cấp lên App" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="79" y="1540" width="260" height="222" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-13" value="PIR có người&#xa;HOẶC MPU6050 rung lắc mạnh?" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="628" y="1500" width="302" height="302" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-14" value="CẢNH BÁO AN NINH:&#xa;- Còi hú ngắt quãng bíp bíp&#xa;- Nháy LED cảnh báo&#xa;- Gửi thông báo có đột nhập" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="337" y="1955" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-15" value="Có thẻ RFID quẹt vào?" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="816" y="1924" width="212" height="212" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-16" value="Mã thẻ hợp lệ?" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="763" y="2259" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-17" value="XÁC THỰC THÀNH CÔNG:&#xa;- Còi nhỏ bíp 1 tiếng&#xa;- Bật sáng LED Xanh&#xa;- Quay Servo mở cửa 5 giây" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="564" y="2492" width="257" height="126" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-18" value="TỪ CHỐI TRUY CẬP:&#xa;- Còi bíp 3 tiếng cảnh báo&#xa;- Nháy LED Đỏ&#xa;- Báo thẻ không hợp lệ" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="871" y="2492" width="246" height="126" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-19" value="Cập nhật Màn hình OLED SSD1306:&#xa;- Hiển thị Nhiệt độ, Độ ẩm, Khí gas, Ánh sáng&#xa;- Trạng thái hệ thống: An toàn / Cảnh báo / Cửa" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="562" y="2668" width="260" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-20" value="Đến chu kỳ gửi IoT?&#xa;Mỗi 3 - 5 giây" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="583" y="2917" width="218" height="218" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-21" value="Đóng gói JSON gửi dữ liệu lên&#xa;Cloud Dashboard / Blynk / MQTT" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="458" y="3207" width="260" height="126" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-22" value="Chờ chu kỳ tiếp theo" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="778" y="3383" width="210" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-23" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.49;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-5" target="TO7G9DBtdeTpsuaXwEZl-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-24" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-6" target="TO7G9DBtdeTpsuaXwEZl-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-25" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.17;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-7" target="TO7G9DBtdeTpsuaXwEZl-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="613" y="677" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-26" value="MẤT KẾT NỐI" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.65;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-8" target="TO7G9DBtdeTpsuaXwEZl-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="147" y="967" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-27" value="KẾT NỐI TỐT" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.73;entryX=0.5;entryY=0.01;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-8" target="TO7G9DBtdeTpsuaXwEZl-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="922" y="967" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-28" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.34;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-9" target="TO7G9DBtdeTpsuaXwEZl-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="147" y="1156" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-29" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=1;entryY=0.26;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-10" target="TO7G9DBtdeTpsuaXwEZl-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="922" y="1156" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-30" value="CÓ" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.7;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-11" target="TO7G9DBtdeTpsuaXwEZl-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="209" y="1464" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-31" value="KHÔNG" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.98;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-11" target="TO7G9DBtdeTpsuaXwEZl-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="779" y="1464" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-32" value="CÓ" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.78;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-13" target="TO7G9DBtdeTpsuaXwEZl-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="467" y="1827" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-33" value="KHÔNG" style="curved=1;startArrow=none;endArrow=block;exitX=0.91;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-13" target="TO7G9DBtdeTpsuaXwEZl-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="922" y="1827" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-34" value="CÓ" style="curved=1;startArrow=none;endArrow=block;exitX=0.2;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-15" target="TO7G9DBtdeTpsuaXwEZl-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="843" y="2162" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-35" value="ĐÚNG" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.89;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-16" target="TO7G9DBtdeTpsuaXwEZl-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="692" y="2456" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-36" value="SAI" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.89;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-16" target="TO7G9DBtdeTpsuaXwEZl-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="994" y="2456" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-37" value="KHÔNG" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.79;entryX=1;entryY=0.32;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-15" target="TO7G9DBtdeTpsuaXwEZl-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1152" y="2162" />
+              <mxPoint x="1152" y="2643" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-38" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.33;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-12" target="TO7G9DBtdeTpsuaXwEZl-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="209" y="2643" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-39" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.13;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-14" target="TO7G9DBtdeTpsuaXwEZl-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="467" y="2643" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-40" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-17" target="TO7G9DBtdeTpsuaXwEZl-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-41" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.22;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-18" target="TO7G9DBtdeTpsuaXwEZl-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="994" y="2643" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-42" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-19" target="TO7G9DBtdeTpsuaXwEZl-20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-43" value="CÓ" style="curved=1;startArrow=none;endArrow=block;exitX=0.14;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-20" target="TO7G9DBtdeTpsuaXwEZl-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="588" y="3171" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-44" value="KHÔNG" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.65;entryX=1;entryY=0.14;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-20" target="TO7G9DBtdeTpsuaXwEZl-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1162" y="3171" />
+              <mxPoint x="1162" y="3358" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-45" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.16;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-21" target="TO7G9DBtdeTpsuaXwEZl-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="588" y="3358" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TO7G9DBtdeTpsuaXwEZl-46" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.25;entryX=1;entryY=0.63;rounded=0;" edge="1" parent="1" source="TO7G9DBtdeTpsuaXwEZl-22" target="TO7G9DBtdeTpsuaXwEZl-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1289" y="3358" />
+              <mxPoint x="1289" y="677" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

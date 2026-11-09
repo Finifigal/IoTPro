@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32-S3 Smart Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-icon">🏠</div>
+            <h1>SMART HOME</h1>
+            <p class="subtitle">Bảng Điều Khiển Nhà Thông Minh</p>
+        </header>
+
+        <main class="dashboard">
+            <!-- Đèn Phòng Khách -->
+            <div class="card" id="card-khach">
+                <div class="card-icon" id="icon-khach">💡</div>
+                <div class="card-info">
+                    <h3>Đèn Phòng Khách</h3>
+                    <p class="status-text" id="status-khach">Đang tắt</p>
+                </div>
+                <div class="switch-wrapper">
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-khach" onchange="toggleDevice('khach', this.checked)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Đèn Phòng Bếp -->
+            <div class="card" id="card-bep">
+                <div class="card-icon" id="icon-bep">💡</div>
+                <div class="card-info">
+                    <h3>Đèn Phòng Bếp</h3>
+                    <p class="status-text" id="status-bep">Đang tắt</p>
+                </div>
+                <div class="switch-wrapper">
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-bep" onchange="toggleDevice('bep', this.checked)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Quản lý Microphone AI -->
+            <div class="card" id="card-mic">
+                <div class="card-icon" id="icon-mic">🎙️</div>
+                <div class="card-info">
+                    <h3>Microphone AI</h3>
+                    <p class="status-text" id="status-mic">Đang lắng nghe</p>
+                </div>
+                <div class="switch-wrapper">
+                    <label class="switch switch-mic">
+                        <input type="checkbox" id="toggle-mic" checked onchange="toggleDevice('mic', this.checked)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="network-badge">
+                <span class="dot-online"></span> Đã kết nối Wi-Fi
+            </div>
+            <p class="tech-stack">ESP32-S3 • Edge AI Voice • Web Dashboard</p>
+        </footer>
+    </div>
+
+    <script>
+        // Hàm gửi yêu cầu AJAX bất đồng bộ (không load lại trang)
+        function toggleDevice(device, state) {
+            const val = state ? 1 : 0;
+            fetch(`/api/control?device=${device}&state=${val}`)
+                .then(res => res.json())
+                .then(data => updateUI(data))
+                .catch(err => console.error("Lỗi:", err));
+        }
+
+        // Cập nhật trạng thái màu sắc và giao diện
+        function updateUI(data) {
+            // Đèn khách
+            const chkKhach = document.getElementById('toggle-khach');
+            const txtKhach = document.getElementById('status-khach');
+            const cardKhach = document.getElementById('card-khach');
+            chkKhach.checked = data.khach;
+            txtKhach.innerText = data.khach ? "Đang bật" : "Đang tắt";
+            cardKhach.className = data.khach ? "card active-khach" : "card";
+
+            // Đèn bếp
+            const chkBep = document.getElementById('toggle-bep');
+            const txtBep = document.getElementById('status-bep');
+            const cardBep = document.getElementById('card-bep');
+            chkBep.checked = data.bep;
+            txtBep.innerText = data.bep ? "Đang bật" : "Đang tắt";
+            cardBep.className = data.bep ? "card active-bep" : "card";
+
+            // Micro
+            const chkMic = document.getElementById('toggle-mic');
+            const txtMic = document.getElementById('status-mic');
+            const cardMic = document.getElementById('card-mic');
+            chkMic.checked = data.mic;
+            txtMic.innerText = data.mic ? "Đang lắng nghe" : "Đã tắt mic";
+            cardMic.className = data.mic ? "card active-mic" : "card";
+        }
+
+        // Tự động đồng bộ trạng thái mỗi 1.5 giây
+        // (Nếu bạn bật/tắt bằng giọng nói thì Web tự động gạt nút theo!)
+        function syncStatus() {
+            fetch('/api/status')
+                .then(res => res.json())
+                .then(data => updateUI(data))
+                .catch(e => {});
+        }
+        setInterval(syncStatus, 1500);
+        window.onload = syncStatus;
+    </script>
+</body>
+</html>

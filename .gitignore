@@ -1,0 +1,18 @@
+# Bỏ qua các file sinh ra khi biên dịch PlatformIO
+**/.pio/
+**/.pioenvs/
+**/.piolibdeps/
+**/.vscode/
+*.bin
+*.elf
+*.o
+*.a
+*.d
+
+# Bỏ qua file rác của hệ điều hành
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.bak
+*.tmp
